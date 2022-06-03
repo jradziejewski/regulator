@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Pomieszczenie.h"
+#include "Grzejnik.h"
 
 class Symulacja
 {

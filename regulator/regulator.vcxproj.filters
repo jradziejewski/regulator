@@ -24,12 +24,18 @@
     <ClCompile Include="Symulacja.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Grzejnik.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pomieszczenie.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Symulacja.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Grzejnik.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
