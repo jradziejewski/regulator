@@ -20,3 +20,22 @@ void Symulacja::przebieg(int _liczbaIteracji, float _dt, float _poziomMocy) {
 		std::cout << pomieszczenie.getTemperatura() << std::endl;
 	}
 }
+
+void Symulacja::zapiszPrzebiegi() {
+	std::ofstream przebiegi("przebiegi.csv");
+	std::locale mylocale("pl-PL");   // get global locale
+	przebiegi.imbue(mylocale);
+	if (!przebiegi.is_open()) {
+		std::cout << "Nie udalo sie utworzyc pliku.";
+		return;
+	}
+	przebiegi << "Czas; Temperatura" << std::endl;
+	for (int i = 0; i < przebiegCzasu.size(); i++) {
+		przebiegi << przebiegCzasu[i] << "; " << przebiegTemperatury[i] << std::endl;
+	}
+
+	przebiegi << "Czas; Moc grzejnika" << std::endl;
+	for (int i = 0; i < przebiegCzasu.size(); i++) {
+		przebiegi << przebiegCzasu[i] << "; " << przebiegMocyGrzejnika[i] << std::endl;
+	}
+}

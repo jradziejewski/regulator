@@ -3,8 +3,8 @@
 #include "Symulacja.h"
 
 int main() {
-	Symulacja symulacja(5, 5, 5, 3010);
+	Symulacja symulacja(5, 5, 5, 1000);
 	//std::cout << grzejnik.aktualnieEmitowaneCieplo();
-	symulacja.przebieg(10, 1, 1);
-	symulacja.wypiszPrzebiegi();
+	symulacja.przebieg(10, 0.5, 1);
+	symulacja.zapiszPrzebiegi();
 }

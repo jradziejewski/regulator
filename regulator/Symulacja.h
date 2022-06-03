@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <fstream>
 #include "Pomieszczenie.h"
 #include "Grzejnik.h"
 
@@ -17,10 +18,6 @@ public:
 	Symulacja(float _wys, float _szer, float _gleb, float _mocGrzejnika) : pomieszczenie(_wys, _szer, _gleb), grzejnik(_mocGrzejnika) {}
 	void iteracja(float _dt, float _cieploGrzejnika);
 	void przebieg(int _liczbaIteracji, float _dt, float _poziomMocy);
-	void wypiszPrzebiegi() {
-		for (int i = 0; i < przebiegTemperatury.size(); i++) {
-			std::cout << przebiegTemperatury[i] << " << temperatura " << przebiegCzasu[i] << " << czas  " << przebiegMocyGrzejnika[i] << " << grzejnik \n";
-		}
-	}
+	void zapiszPrzebiegi();
 };
 
