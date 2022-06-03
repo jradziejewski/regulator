@@ -4,7 +4,10 @@
 
 int main() {
 	Symulacja symulacja(5, 5, 5);
-	for (int i = 0; i < 50; i++) {
-		symulacja.iteracja(0.2);
+	Grzejnik grzejnik(1500);
+	grzejnik.setPoziomMocy(50);
+	//std::cout << grzejnik.aktualnieEmitowaneCieplo();
+	for (int i = 0; i < 25; i++) {
+		symulacja.iteracja(5, grzejnik.aktualnieEmitowaneCieplo());
 	}
 }

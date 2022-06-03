@@ -5,11 +5,12 @@ class Grzejnik
 {
 private:
 	float mocNominalna;
-	float poziomMocy;
+	float poziomMocy = 0;
 public:
-	Grzejnik(float _mocNominalna);
-	float aktualnieEmitowaneCieplo() { return mocNominalna * poziomMocy; };
+	Grzejnik(float _mocNominalna) : mocNominalna(_mocNominalna) {};
+	float aktualnieEmitowaneCieplo();
 	float getMocNominalna() { return mocNominalna; };
 	float getPoziomMocy() { return poziomMocy; };
+	void setPoziomMocy(float _poziomMocy) { poziomMocy = _poziomMocy; };
 };
 
