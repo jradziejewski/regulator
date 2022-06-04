@@ -27,6 +27,12 @@
     <ClCompile Include="Grzejnik.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Regulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RegulatorBB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pomieszczenie.h">
@@ -36,6 +42,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Grzejnik.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Regulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RegulatorBB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
