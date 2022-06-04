@@ -33,6 +33,9 @@
     <ClCompile Include="RegulatorBB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RegulatorPID.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pomieszczenie.h">
@@ -48,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RegulatorBB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RegulatorPID.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

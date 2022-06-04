@@ -13,7 +13,7 @@ void Symulacja::przebieg(int _liczbaIteracji, float _dt) {
 	for (int i = 0; i < _liczbaIteracji; i++) {
 
 		//USTAWIAM POZIOM MOCY!!!!!!!!!!
-		grzejnik.setPoziomMocy(regulator->steruj(20, pomieszczenie.getTemperatura(), _dt));
+		grzejnik.setPoziomMocy(regulator->steruj(30, pomieszczenie.getTemperatura(), _dt));
 		// USTAWIAM POZIOM MOCY ^^^ !!!!!!!!!!!!
 
 		czas += _dt;
@@ -28,18 +28,13 @@ void Symulacja::przebieg(int _liczbaIteracji, float _dt) {
 void Symulacja::zapiszPrzebiegi() {
 	std::ofstream przebiegi("przebiegi.csv");
 	std::locale mylocale("pl-PL");   // get global locale
-	przebiegi.imbue(mylocale);
+	//przebiegi.imbue(mylocale);
 	if (!przebiegi.is_open()) {
 		std::cout << "Nie udalo sie utworzyc pliku.";
 		return;
 	}
-	przebiegi << "Czas; Temperatura" << std::endl;
+	przebiegi << "Czas; Temperatura; Czas; Moc grzejnika" << std::endl;
 	for (int i = 0; i < przebiegCzasu.size(); i++) {
-		przebiegi << przebiegCzasu[i] << "; " << przebiegTemperatury[i] << std::endl;
-	}
-
-	przebiegi << "Czas; Moc grzejnika" << std::endl;
-	for (int i = 0; i < przebiegCzasu.size(); i++) {
-		przebiegi << przebiegCzasu[i] << "; " << przebiegMocyGrzejnika[i] << std::endl;
+		przebiegi << przebiegCzasu[i] << "; " << przebiegTemperatury[i] << "; " << przebiegCzasu[i] << "; " << przebiegMocyGrzejnika[i] << std::endl;
 	}
 }

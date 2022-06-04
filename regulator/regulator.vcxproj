@@ -144,6 +144,7 @@
     <ClCompile Include="Pomieszczenie.cpp" />
     <ClCompile Include="Regulator.cpp" />
     <ClCompile Include="RegulatorBB.cpp" />
+    <ClCompile Include="RegulatorPID.cpp" />
     <ClCompile Include="Symulacja.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +152,7 @@
     <ClInclude Include="Pomieszczenie.h" />
     <ClInclude Include="Regulator.h" />
     <ClInclude Include="RegulatorBB.h" />
+    <ClInclude Include="RegulatorPID.h" />
     <ClInclude Include="Symulacja.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
