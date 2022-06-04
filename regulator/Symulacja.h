@@ -16,8 +16,8 @@ private:
 
 public:
 	Symulacja(float _wys, float _szer, float _gleb, float _mocGrzejnika) : pomieszczenie(_wys, _szer, _gleb), grzejnik(_mocGrzejnika) {}
-	void iteracja(float _dt, float _cieploGrzejnika);
-	void przebieg(int _liczbaIteracji, float _dt, float _poziomMocy);
+	void iteracja(float _dt);
+	void przebieg(int _liczbaIteracji, float _dt);
 	void zapiszPrzebiegi();
 };
 
