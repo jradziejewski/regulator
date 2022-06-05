@@ -6,12 +6,19 @@ class RegulatorPID :
     public Regulator
 {
 private:
-    float kp = 4;
-    float ki = 0.02;
-    float kd = 0.1;
-    float ec = 0;
-    float ep = 0;
+    float kp;
+    float ki;
+    float kd;
+    float ec;
+    float ep;
 public:
-    void steruj(float _zadanaTemperatura, float _dt);
+    RegulatorPID()
+        : kp(4)
+        , ki(0.02)
+        , kd(0.1)
+        , ec(0)
+        , ep(0)
+    {};
+    void steruj(float _dt);
 };
 

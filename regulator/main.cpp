@@ -6,10 +6,12 @@
 #include "RegulatorPID.h"
 
 int main() {
-	Symulacja symulacja(5, 5, 5, 80000);
+
+	//Wysokosc, szerokosc, glebokosc, moc grzejnika
+	Symulacja symulacja(2, 3, 4, 3000);
+
 	RegulatorPID regulatorPID;
 	RegulatorBB regulatorBB;
-	symulacja.setRegulator(&regulatorBB);
 	
 	bool menu = true;
 	char rodzaj;
@@ -19,12 +21,13 @@ int main() {
 		std::cin >> rodzaj;
 		if (rodzaj == '1' || rodzaj == '2') {
 			menu = 0;
-		} else {
+		}
+		else {
 			system("CLS");
 			std::cout << "Nie ma takiego numeru. Sprobuj ponownie\n";
 		}
 	}
-		
+
 	if (rodzaj == '1') {
 		symulacja.setRegulator(&regulatorBB);
 	}
@@ -32,6 +35,12 @@ int main() {
 		symulacja.setRegulator(&regulatorPID);
 	}
 	else return 0;
-	symulacja.przebieg(1000, 0.5);
+	try {
+		symulacja.przebieg(2000, 0.2137);
+	}
+	catch (const char* opisBledu) {
+		std::cout << "BLAD: " << opisBledu << std::endl;
+	}
+
 	symulacja.zapiszPrzebiegi();
 }

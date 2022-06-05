@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <stdexcept>
 #include "Pomieszczenie.h"
 #include "Grzejnik.h"
 #include "Regulator.h"

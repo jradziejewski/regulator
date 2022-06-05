@@ -11,12 +11,12 @@ public:
 	Regulator()
 		: grzejnik(nullptr)
 		, pomieszczenie(nullptr)
-		, zadanaTemperatura(20)
+		, zadanaTemperatura(25)
 		{};
 	Grzejnik* grzejnik;
 	Pomieszczenie* pomieszczenie;
-	virtual void steruj(float _zadanaTemperatura, float _dt) = 0;
+	virtual void steruj(float _dt) = 0;
 	virtual void dodajGrzejnik(Grzejnik& _grzejnik) { grzejnik = &_grzejnik; };
-	virtual void dodajPomieszczenie(Pomieszczenie& _pomieszczenie) { pomieszczenie = &_pomieszczenie; };
+	virtual void dodajPomieszczenie(Pomieszczenie& _pomieszczenie) {pomieszczenie = &_pomieszczenie;};
 };
 

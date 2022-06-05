@@ -9,20 +9,24 @@ void Symulacja::przebieg(int _liczbaIteracji, float _dt) {
 	przebiegTemperatury.clear();
 	przebiegCzasu.clear();
 	przebiegMocyGrzejnika.clear();
+	if (this->regulator == nullptr) throw "Brak regulatora.";
 	regulator->dodajGrzejnik(grzejnik);
 	regulator->dodajPomieszczenie(pomieszczenie);
 	float czas = 0;
+	if (regulator->pomieszczenie == nullptr || regulator->grzejnik == nullptr) throw "Regulator nie jest powiazany z innymi obiektami.";
 	for (int i = 0; i < _liczbaIteracji; i++) {
 
-		//USTAWIAM POZIOM MOCY!!!!!!!!!!
-		regulator->steruj(30, _dt);
-		// USTAWIAM POZIOM MOCY ^^^ !!!!!!!!!!!!
+		regulator->steruj(_dt);
 
 		czas += _dt;
+
 		iteracja(_dt);
+
 		przebiegTemperatury.push_back(pomieszczenie.getTemperatura());
 		przebiegCzasu.push_back(czas);
 		przebiegMocyGrzejnika.push_back(grzejnik.aktualnieEmitowaneCieplo());
+
+		//opcjonalny print
 		std::cout << pomieszczenie.getTemperatura() << std::endl;
 	}
 }

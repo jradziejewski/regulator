@@ -1,11 +1,12 @@
 #include "RegulatorPID.h"
 
-void RegulatorPID::steruj(float _zadanaTemperatura, float _dt) {
+void RegulatorPID::steruj(float _dt) {
+	if (_dt == 0) throw "Bledny czas. Regulator PID nie moze dzielic przez 0.";
 	float up, ui, ud, e;
 
 
 	//Up
-	e = _zadanaTemperatura - pomieszczenie->getTemperatura();
+	e = zadanaTemperatura - pomieszczenie->getTemperatura();
 	up = kp * e;
 
 	//Ui

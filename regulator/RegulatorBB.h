@@ -4,6 +4,6 @@ class RegulatorBB :
     public Regulator
 {
 public:
-    void steruj(float _zadanaTemperatura, float _dt);
+    void steruj(float _dt);
 };
 
