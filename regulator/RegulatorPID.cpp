@@ -1,19 +1,21 @@
 #include "RegulatorPID.h"
 
-float RegulatorPID::steruj(float _zadanaTemperatura, float _zmierzonaTemperatura, float _dt) {
+void RegulatorPID::steruj(float _zadanaTemperatura, float _dt) {
 	float up, ui, ud, e;
 
+
 	//Up
-	e = _zadanaTemperatura - _zmierzonaTemperatura;
+	e = _zadanaTemperatura - pomieszczenie->getTemperatura();
 	up = kp * e;
 
 	//Ui
-	ec = ec + e * _dt;
+	ec += e * _dt;
 	ui = ki * ec;
 
 	//Ud
 	float de = (e - ep) / _dt;
 	ud = kd * de;
 
-	return (up + ui + ud);
+	ep = e;
+	grzejnik->setPoziomMocy(up + ui + ud);
 }

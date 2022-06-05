@@ -9,11 +9,13 @@ void Symulacja::przebieg(int _liczbaIteracji, float _dt) {
 	przebiegTemperatury.clear();
 	przebiegCzasu.clear();
 	przebiegMocyGrzejnika.clear();
+	regulator->dodajGrzejnik(grzejnik);
+	regulator->dodajPomieszczenie(pomieszczenie);
 	float czas = 0;
 	for (int i = 0; i < _liczbaIteracji; i++) {
 
 		//USTAWIAM POZIOM MOCY!!!!!!!!!!
-		grzejnik.setPoziomMocy(regulator->steruj(30, pomieszczenie.getTemperatura(), _dt));
+		regulator->steruj(30, _dt);
 		// USTAWIAM POZIOM MOCY ^^^ !!!!!!!!!!!!
 
 		czas += _dt;
